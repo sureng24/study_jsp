@@ -24,7 +24,7 @@ public class ControllerUsingURI extends HttpServlet{
 		String configFile = getInitParameter("configFile");
 		Properties prop = new Properties();
 		String configFilePath = getServletContext().getRealPath(configFile);
-		try (FileReader fis = new FileReader(configFile)) {
+		try (FileReader fis = new FileReader(configFilePath)) {
 			prop.load(fis);
 		} catch (IOException e) {
 			throw new ServletException(e);
